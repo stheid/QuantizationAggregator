@@ -15,6 +15,7 @@ jupyter = "^1.0.0"
 matplotlib = "^3.8.2"
 seaborn = "^0.13.1"
 tqdm = "^4.66.1"
+pygad = "^3.2.0"
 
 
 [build-system]

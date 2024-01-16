@@ -60,6 +60,6 @@ if __name__ == '__main__':
     from sklearn.model_selection import cross_val_score
     from sklearn.datasets import fetch_openml
 
-    X, y = fetch_openml(data_id=43979, return_X_y=True, as_frame=False)
+    X, y = fetch_openml(data_id=42900, return_X_y=True, as_frame=False)
 
     print(cross_val_score(QuantizationAgg(random_state=42), X, y, n_jobs=1, cv=2).mean())

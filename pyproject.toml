@@ -4,9 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["Stefan <stefan.heid@lmu.de>"]
 readme = "README.md"
+packages = [{ include = "skqreg" }]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python =  ">=3.9,<3.12"
 scikit-learn = "^1.3.2"
 pandas = "^2.1.4"
 numpy = "^1.26.3"
@@ -16,6 +17,8 @@ matplotlib = "^3.8.2"
 seaborn = "^0.13.1"
 tqdm = "^4.66.1"
 pygad = "^3.2.0"
+ipykernel = "^6.28.0"
+mip = "^1.15.0"
 
 
 [build-system]

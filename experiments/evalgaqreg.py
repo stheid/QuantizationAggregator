@@ -1,4 +1,5 @@
 from matplotlib import pyplot as plt
+from sklearn.calibration import CalibrationDisplay
 from sklearn.datasets import fetch_openml
 from sklearn.metrics import RocCurveDisplay
 
@@ -7,7 +8,10 @@ from skqreg.estimators.ga_qagg import GAQuantizedAgg
 if __name__ == '__main__':
     X, y = fetch_openml(data_id=43979, return_X_y=True, as_frame=False)
     X, y = fetch_openml(data_id=42900, return_X_y=True, as_frame=False)
-    #X = X[:, 0].reshape(-1, 1)
+    #X = X[:, [0,1]].reshape(-1, 1)
     clf = GAQuantizedAgg().fit(X, y)
-    roc_display = RocCurveDisplay.from_estimator(clf, X, y).plot()
-    plt.savefig("roc_curve.png")
+    #roc_display = RocCurveDisplay.from_estimator(clf, X, y).plot()
+    #plt.savefig("roc_curve.png")
+
+    cal_display = CalibrationDisplay.from_estimator(clf,X,y)
+    plt.savefig("cal_curve.png")
